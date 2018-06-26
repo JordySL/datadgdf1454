@@ -1,26 +1,12 @@
-﻿using Dapper;
-using ProyectoGestion.Models;
+﻿using ProyectoGestion.Models.EntityForm;
 using ProyectoGestion.Repository;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace ProyectoGestion.DADapper
 {
-    public class UserRepository : Repository<Users>, IUserRepository
+    public class UserAccountPhotoRepository : Repository<UserAccountPhoto>, IUserAccountPhotoRepository
     {
-        public UserRepository(string connectionString) : base(connectionString){ }
-        public IEnumerable<Users> Autenticacion(string nombre,string clave)
+        public UserAccountPhotoRepository(string connectionString) : base(connectionString)
         {
-            var auten = new
-            {
-                nom = nombre,
-                cla = clave
-            };
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                return connection.Query<Users>("Autenticacion", auten, commandType: CommandType.StoredProcedure);
-            }
         }
     }
 }

@@ -149,5 +149,5 @@
 --reference:C:\Users\Jordy\Documents\Visual Studio 2015\Projects\ProyectoGestion.Web\src\ProyectoGestion.Models\bin\Debug\netstandard1.6\ProyectoGestion.Models.dll
 --reference:C:\Users\Jordy\Documents\Visual Studio 2015\Projects\ProyectoGestion.Web\src\ProyectoGestion.Repository\bin\Debug\netstandard1.6\ProyectoGestion.Repository.dll
 --reference:C:\Users\Jordy\Documents\Visual Studio 2015\Projects\ProyectoGestion.Web\src\ProyectoGestion.UnitOfWork\bin\Debug\netstandard1.6\ProyectoGestion.UnitOfWork.dll
-C:\Users\Jordy\Documents\Visual Studio 2015\Projects\ProyectoGestion.Web\src\ProyectoGestion.Business\UserBusiness.cs
+C:\Users\Jordy\Documents\Visual Studio 2015\Projects\ProyectoGestion.Web\src\ProyectoGestion.Business\UserAccountPhotoBusiness.cs
 C:\Users\Jordy\Documents\Visual Studio 2015\Projects\ProyectoGestion.Web\src\ProyectoGestion.Business\Properties\AssemblyInfo.cs

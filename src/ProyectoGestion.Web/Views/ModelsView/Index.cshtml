@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @using ProyectoGestion.Models.EntityForm;
+}
+
+<h2>Index</h2>
+
+<div>
+    <h4>Models</h4>
+    <hr />
+    <div class="col-sm-12">
+        <a href="@Url.Action("RazorListar")">Listado Razor</a>
+    </div>
+    <div class="col-sm-12">
+        <a href="@Url.Action("JsonListar")">Listado Json</a>
+    </div>
+    <div class="col-sm-12">
+        <a href="@Url.Action("AngularTable")">AngularTable</a>
+    </div>
+    <div class="col-sm-12">
+        <a href="@Url.Action("AngularFormBasic")">AngularFormBasic</a>
+    </div>
+    <div class="col-sm-12">
+        <a href="@Url.Action("AngularEnviarData")">AngularEnviarData</a>
+    </div>
+    <div class="col-sm-12">
+        <a href="@Url.Action("Modals")">Modals</a>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

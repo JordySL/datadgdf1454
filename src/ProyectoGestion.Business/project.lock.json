@@ -8223,7 +8223,6 @@
   "projectFileDependencyGroups": {
     "": [
       "NETStandard.Library >= 1.6.0",
-      "ProyectoGestion.Models >= 1.0.0-*",
       "ProyectoGestion.UnitOfWork >= 1.0.0-*"
     ],
     ".NETStandard,Version=v1.6": []

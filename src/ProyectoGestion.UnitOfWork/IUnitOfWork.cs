@@ -4,6 +4,6 @@ namespace ProyectoGestion.UnitOfWork
 {
     public interface IUnitOfWork
     {
-        IUserRepository users { get; }
+        IUserAccountPhotoRepository useraccountphoto { get; }
     }
 }

@@ -1,7 +1,6 @@
-﻿using System;
-using ProyectoGestion.Models;
-using ProyectoGestion.Repository;
+﻿using ProyectoGestion.Repository;
 using ProyectoGestion.UnitOfWork;
+using ProyectoGestion.Models.EntityForm;
 
 namespace ProyectoGestion.DADapper
 {
@@ -10,9 +9,13 @@ namespace ProyectoGestion.DADapper
         public ProyectoGestionUnitOfWork(string connectionString)
         {
             //obj = new ObJRepository (connectionString);
-            users = new UserRepository (connectionString);
+            useraccountphoto = new UserAccountPhotoRepository(connectionString);
         }
+        public IUserAccountPhotoRepository useraccountphoto
+        {
+            get; private set;
+        }
+
         //public IObjRepository obj{get;private set;}
-        public IUserRepository users { get; private set; }
     }
 }

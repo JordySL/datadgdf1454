@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using ProyectoGestion.UnitOfWork;
-using ProyectoGestion.DADapper;
 using ProyectoGestion.Business;
+using ProyectoGestion.DADapper;
+using ProyectoGestion.UnitOfWork;
 
 namespace ProyectoGestion.Web
 {
@@ -34,7 +30,7 @@ namespace ProyectoGestion.Web
             services.AddMvc();
             services.AddSingleton<IUnitOfWork>(options =>
             new ProyectoGestionUnitOfWork(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddTransient<IUserBusiness, UserBusiness>();
+            services.AddTransient<IUserAccountPhotoBusiness, UserAccountPhotoBusiness>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,8 +54,8 @@ namespace ProyectoGestion.Web
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "User",
-                    template: "{controller=User}/{action=Index}/{id?}");
+                    name: "ModelsView",
+                    template: "{controller=ModelsView}/{action=Index}/{id?}");
             });
         }
     }

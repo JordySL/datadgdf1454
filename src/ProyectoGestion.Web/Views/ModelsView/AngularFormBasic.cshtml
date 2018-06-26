@@ -1,0 +1,50 @@
+﻿<body ng-app="ngAppDemo">
+    <div ng-controller="ngAppDemoController">
+        <style>
+            input.ng-invalid {
+                background-color: pink;
+            }
+
+            input.ng-valid {
+                background-color: lightgreen;
+            }
+        </style>
+
+        <br />
+        <form name="validacion" novalidate class="simple-form">
+            <label class="control-label">Enter name: </label>
+            <input class="form-control" type="text" name="name" ng-model="name" required>
+            <span ng-show="validacion.name.$touched && validacion.name.$invalid"><font color="red">Es Requerido el Nombre</font></span><br /><br />
+
+            <label class="control-label">Enter apellido: </label>
+            <input class="form-control" type="text" name="apellido" ng-model="apellido" required>
+            <span  ng-show="validacion.apellido.$touched && validacion.apellido.$invalid"><font color="red">Es Requerido el Apellido</font></span><br />
+
+            <label class="control-label">Enter edad: </label>
+            <input class="form-control" type="number" name="edad" ng-model="edad" required>
+            <span ng-show="validacion.edad.$touched && validacion.edad.$invalid"><font color="red">Es Requerido la Edad</font></span><br />
+
+            <label class="control-label">Enter birthday: </label>
+            <input class="form-control" type="date" name="birthday" ng-model="birthday" required>
+            <span ng-show="validacion.birthday.$touched && validacion.birthday.$invalid"><font color="red">Es Requerido la fecha de Cumpleaños</font></span><br />
+
+            <label class="control-label">Enter Email: </label>
+            <input class="form-control" type="email" name="Email" ng-model="Email" required>
+            <span ng-show="validacion.Email.$touched && validacion.Email.$invalid"><font color="red">Es Requerido el Email</font></span><br />
+            <button ng-click="update(user)">SAVE</button>
+        </form>
+
+        <div class="">Resultado: </div>
+            <div class="form-control col-sm-12">
+                <span class="" ng-bind="name"></span>
+                <span class="" ng-bind="apellido"></span>
+                <span class="" ng-bind="edad"></span>
+                <span class="" ng-bind="birthday | date : 'dd/MM/y'"></span>
+                <span class="" ng-bind="Email"></span>
+            </div>
+            <div class="form-control col-sm-12">
+
+            </div>
+
+    </div>
+</body>
