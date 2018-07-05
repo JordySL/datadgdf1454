@@ -6,6 +6,12 @@
         $scope.edad = '';
         $scope.email = '';
         $scope.birthday = '';
+        $scope.master = {};
+        $scope.update = function (user) {
+            if ($scope.validacion.$valid){
+                $scope.master = angular.copy(user);
+            }
+        };
         $scope.users = [{ nombre: 'Jordy', ape: 'Sotomayor', Editar: 'Editar', Borrar: 'Borrar' },
                         { nombre: 'Tiff', ape: 'Martinez', Editar: 'Editar', Borrar: 'Borrar' }];
 
@@ -13,23 +19,21 @@
     angular.module('ngAppRepert', []).controller('ngAppReperts', ['$scope', '$http', '$templateCache', function ($scope, $http, $templateCache) {
         $scope.Editar = 'Editar';
         $scope.Borrar = 'Borrar';
-        $scope.method = 'Post';
-        $scope.url = '/ModelsView/JsonListar';
-        $http({
-            method: $scope.method,
-            url: $scope.url,
-        }).then(function successCallback(response) {
-            $scope.usuarios = response.data;
-            console.log(response);
-        }, function errorCallback(response) {
-            console.log(response);
+        $http({ method: "Post", url: "/ModelsView/JsonListar", })
+            .then(function successCallback(response) {
+                $scope.usuarios = response.data;
+                console.log(response);
+        },function errorCallback(response) {
+                console.log(response);
         });
     }]);
-    angular.module('ngAppModal', []).controller('ngAppModalController', ['$scope','$http','$modal', function ($scope, $http) {
-        $scope.showModal =function () {
-        $scope.Modal = { };
-        var modalInstance = $modal.open({
-            templateUrl: '~/Views/ModelsView/_Edit.cshtml'})
-}
-    }]);
+
+    angular.module('Example', []).controller('ExampleController', ['$scope', function ($scope) {
+        $scope.NuevoItem = {};
+        $scope.usuario = [];
+        $scope.agregarNuevoItem = function () {
+            $scope.usuario.push($scope.NuevoItem);
+            $scope.NuevoItem = {};
+        }
+}]);
 })(window.angular);

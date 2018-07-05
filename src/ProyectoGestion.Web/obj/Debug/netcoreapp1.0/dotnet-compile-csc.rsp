@@ -227,7 +227,8 @@
 -resource:"C:\Users\Jordy\Documents\Visual Studio 2015\Projects\ProyectoGestion.Web\src\ProyectoGestion.Web\obj\Debug\netcoreapp1.0\ProyectoGestion.Webdotnet-compile.deps.json",ProyectoGestion.Web.deps.json
 "C:\Users\Jordy\Documents\Visual Studio 2015\Projects\ProyectoGestion.Web\src\ProyectoGestion.Web\Program.cs"
 "C:\Users\Jordy\Documents\Visual Studio 2015\Projects\ProyectoGestion.Web\src\ProyectoGestion.Web\Startup.cs"
+"C:\Users\Jordy\Documents\Visual Studio 2015\Projects\ProyectoGestion.Web\src\ProyectoGestion.Web\Controllers\EjemploController.cs"
 "C:\Users\Jordy\Documents\Visual Studio 2015\Projects\ProyectoGestion.Web\src\ProyectoGestion.Web\Controllers\HomeController.cs"
+"C:\Users\Jordy\Documents\Visual Studio 2015\Projects\ProyectoGestion.Web\src\ProyectoGestion.Web\Controllers\LessController.cs"
 "C:\Users\Jordy\Documents\Visual Studio 2015\Projects\ProyectoGestion.Web\src\ProyectoGestion.Web\Controllers\ModelsViewController.cs"
-"C:\Users\Jordy\Documents\Visual Studio 2015\Projects\ProyectoGestion.Web\src\ProyectoGestion.Web\Helpers\HelperModal.cs"
 "C:\Users\Jordy\Documents\Visual Studio 2015\Projects\ProyectoGestion.Web\src\ProyectoGestion.Web\Models\Models.cs"

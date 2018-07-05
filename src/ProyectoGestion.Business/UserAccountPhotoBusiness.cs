@@ -9,6 +9,7 @@ namespace ProyectoGestion.Business
     public interface IUserAccountPhotoBusiness
     {
         IEnumerable<UserAccountPhoto> GetAllUserAccountPhoto();
+        List<UserAccountPhoto> GetListUserAccountPhoto();
         UserAccountPhoto GetUserAccountPhoto(int id);
         int InsertUserAccountPhoto(UserAccountPhoto UserAccountPhoto);
         int DeleteUserAccountPhoto(UserAccountPhoto UserAccountPhoto);
@@ -29,6 +30,11 @@ namespace ProyectoGestion.Business
         }
 
         public IEnumerable<UserAccountPhoto> GetAllUserAccountPhoto()
+        {
+            return _unitofWork.useraccountphoto.GetAll();
+        }
+
+        public List<UserAccountPhoto> GetListUserAccountPhoto()
         {
             return _unitofWork.useraccountphoto.GetList();
         }

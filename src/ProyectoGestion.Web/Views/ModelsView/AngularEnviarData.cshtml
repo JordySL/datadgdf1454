@@ -9,6 +9,10 @@
     text-align: center;
     }
 </style>
+<br />
+
+ <input type="button" class="btn btn-primary" id="Create" name="Create" value="Create" onclick="window.location='@Url.Action("Create")'"/>
+
 <body ng-app="ngAppRepert">
     <div class="form-horizontal" ng-controller="ngAppReperts">
         <table class="table table-dark" align="center">
@@ -31,8 +35,8 @@
                     <td class="col-sm-1" >{{ x.photo }}</td>
                     <td class="col-sm-1" >{{ x.userName }}</td>
                     <td class="col-sm-1" >{{ x.password }}</td>
-                    <td><input type="button" class="btn btn-success col-sm-8" value="{{ Editar }}" ng-click="_Edit()"/></td>
-                    <td><input type="button" class="btn btn-danger col-sm-8" value="{{ Borrar }}" /></td>
+                    <td><input type="button" class="btn btn-success col-sm-8" value="{{ Editar }}" />
+                    <td><input type="button" class="btn btn-danger col-sm-8" value="{{ Borrar }}" />
                 </tr>
             </tbody>
         </table>

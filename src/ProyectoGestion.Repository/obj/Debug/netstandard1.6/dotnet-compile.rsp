@@ -148,5 +148,5 @@
 --reference:C:\Users\Jordy\.nuget\packages\System.Xml.XmlDocument\4.0.1\ref\netstandard1.3\System.Xml.XmlDocument.dll
 --reference:C:\Users\Jordy\Documents\Visual Studio 2015\Projects\ProyectoGestion.Web\src\ProyectoGestion.Models\bin\Debug\netstandard1.6\ProyectoGestion.Models.dll
 C:\Users\Jordy\Documents\Visual Studio 2015\Projects\ProyectoGestion.Web\src\ProyectoGestion.Repository\IRepository.cs
-C:\Users\Jordy\Documents\Visual Studio 2015\Projects\ProyectoGestion.Web\src\ProyectoGestion.Repository\IUserAccountPhotoRepository.cs
+C:\Users\Jordy\Documents\Visual Studio 2015\Projects\ProyectoGestion.Web\src\ProyectoGestion.Repository\IUserRepository.cs
 C:\Users\Jordy\Documents\Visual Studio 2015\Projects\ProyectoGestion.Web\src\ProyectoGestion.Repository\Properties\AssemblyInfo.cs

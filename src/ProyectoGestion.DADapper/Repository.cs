@@ -2,6 +2,9 @@
 using ProyectoGestion.Repository;
 using Dapper.Contrib.Extensions;
 using System.Data.SqlClient;
+using System;
+using Dapper;
+using System.Linq;
 
 namespace ProyectoGestion.DADapper
 {
@@ -29,10 +32,10 @@ namespace ProyectoGestion.DADapper
                 return connection.Get<I>(id);
             }
         }
-        public IEnumerable<I> GetList()
+        public IEnumerable<I> GetAll()
         {
             using (var connection = new SqlConnection(_connectionString))
-            {return connection.GetAll<I>();}
+            { return connection.GetAll<I>(); }
         }
         public int Insert(I entity)
         {

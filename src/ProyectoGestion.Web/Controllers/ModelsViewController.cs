@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using ProyectoGestion.Business;
-
+using ProyectoGestion.Models.EntityForm;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace ProyectoGestion.Web.Controllers
 {
@@ -11,24 +14,25 @@ namespace ProyectoGestion.Web.Controllers
         {
             _useraccountphotoBusiness = useraccountphotoBusiness;
         }
-        public ActionResult Index()
+        public IActionResult Index()
         {
             return View();
         }
-        public ActionResult AngularFormBasic()
+        public IActionResult AngularFormBasic()
         {
             return View();
         }
-        public ActionResult AngularTable()
+        public IActionResult AngularTable()
         {
             return View();
         }
-        public ActionResult AngularEnviarData()
+        public IActionResult AngularEnviarData()
         {
-            return View();
+            var data = _useraccountphotoBusiness.GetAllUserAccountPhoto();
+            return View(Json(data));
         }
         //Razor Page
-        public ActionResult RazorListar()
+        public IActionResult RazorListar()
         {
             var data = _useraccountphotoBusiness.GetAllUserAccountPhoto();
             return View(data);
@@ -45,15 +49,43 @@ namespace ProyectoGestion.Web.Controllers
             return PartialView("_Edit");
         }
         //Json by AngularJs Page
-        public ActionResult AngularListar()
+        public IActionResult AngularListar()
         {
             var data = _useraccountphotoBusiness.GetAllUserAccountPhoto();
             return View(data);
         }
-        public ActionResult Modals()
+        public IActionResult Modals()
         {
             return View("Modals");
         }
+        public IActionResult Create()
+        {
+            return View("_Create");
+        }
+        [HttpPost]
+        public IActionResult Create(UserAccountPhoto UserAccountPhoto)
+        {
+            var data = _useraccountphotoBusiness.InsertUserAccountPhoto(UserAccountPhoto);
+            return View("AngularEnviarData");
+        }
+        public IActionResult Edit(int id)
+        {
+            var entidad = _useraccountphotoBusiness.GetUserAccountPhoto(id);
+            return View(entidad);
+        }
+        [HttpPost]
+        public IActionResult Edit(UserAccountPhoto UserAccountPhoto)
+        {
+            _useraccountphotoBusiness.UpdateUserAccountPhoto(UserAccountPhoto);
+            return View(UserAccountPhoto);
+        }
+        public IActionResult Delete(int id)
+        {
+            var delete = new UserAccountPhoto { ID = id };
+            var data = _useraccountphotoBusiness.DeleteUserAccountPhoto(delete);
+            return View("Index");
+        }
+
     }
 }
 

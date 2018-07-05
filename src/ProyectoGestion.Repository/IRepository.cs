@@ -7,7 +7,7 @@ namespace ProyectoGestion.Repository
         int Insert(I entity);
         int Delete(I entity);
         int Update(I entity);
-        IEnumerable<I> GetList();
+        IEnumerable<I> GetAll();
         I GetById(int id);
     }
 }

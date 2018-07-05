@@ -29,8 +29,11 @@ namespace ProyectoGestion.Web
             // Add framework services.
             services.AddMvc();
             services.AddSingleton<IUnitOfWork>(options =>
-            new ProyectoGestionUnitOfWork(Configuration.GetConnectionString("DefaultConnection")));
+            new WebUnitOfWork(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IUserAccountPhotoBusiness, UserAccountPhotoBusiness>();
+            services.AddTransient<IUsuarioBusiness, UsuarioBusiness>();
+            services.AddTransient<IUserAccountBusiness, UserAccountBusiness>();
+            services.AddTransient<IUserPhotoBusiness, UserPhotoBusiness>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,8 +57,8 @@ namespace ProyectoGestion.Web
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "ModelsView",
-                    template: "{controller=ModelsView}/{action=Index}/{id?}");
+                    name: "Less",
+                    template: "{controller=Less}/{action=Index}/{id?}");
             });
         }
     }
