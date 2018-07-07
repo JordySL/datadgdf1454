@@ -7,10 +7,10 @@
 <body ng-app="myApp">
 
     <div ng-controller="myCtrl">
+        <pre>File = {{myFile | json}}</pre>
         <input type="file" file-model="myFile" />
         <button ng-click="uploadFile()">upload me</button>
     </div>
-    {{name}}
     <script>
          var myApp = angular.module('myApp', []);
 

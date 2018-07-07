@@ -58,15 +58,11 @@ namespace ProyectoGestion.Web.Controllers
         {
             return View("Modals");
         }
-        public IActionResult Create()
-        {
-            return View("_Create");
-        }
-        [HttpPost]
-        public IActionResult Create(UserAccountPhoto UserAccountPhoto)
+        public string Create(UserAccountPhoto UserAccountPhoto)
         {
             var data = _useraccountphotoBusiness.InsertUserAccountPhoto(UserAccountPhoto);
-            return View("AngularEnviarData");
+            string data2 = "asd";
+            return data2;
         }
         public IActionResult Edit(int id)
         {
@@ -85,7 +81,9 @@ namespace ProyectoGestion.Web.Controllers
             var data = _useraccountphotoBusiness.DeleteUserAccountPhoto(delete);
             return View("Index");
         }
-
+        public IActionResult File(){ return View(); }
+        public IActionResult googlemap() { return View(); }
+        public IActionResult variacion() { return View(); }
     }
 }
 
