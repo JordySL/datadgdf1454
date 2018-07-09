@@ -1,0 +1,58 @@
+@*<div ng-app="ExcelModel" ng-controller="ExcelController">
+    <button class="btn btn-link" ng-click="exportToExcel('#table1')">
+        <span class="glyphicon glyphicon-share"></span> Export to Excel
+    </button>
+    <table class="table table-dark" align="center" id="table1">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Photo</th>
+                <th scope="col">UserName</th>
+                <th scope="col">Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < 4250; i++)
+            {
+                <tr>
+                    <td class="col-sm-1">@i</td>
+                    <td class="col-sm-1">Nombre</td>
+                    <td class="col-sm-1">Apellido</td>
+                    <td class="col-sm-1">Photo</td>
+                    <td class="col-sm-1">UserName</td>
+                    <td class="col-sm-1">Password</td>
+                </tr>
+            }
+        </tbody>
+    </table>*@
+@*</div>*@
+
+<body ng-app="plunker" ng-controller="MainCtrl">
+    <p>Export HTML Table to Excel, Pdf, CSV and Doc</p>
+
+    <table class="export-table" style="width: 100%; margin-top: 20px">
+        <thead>
+            <tr >
+                <th ng-repeat="ord in Head | orderBy : 'Orden'">{{ord.Name}}</th>
+            </tr>
+        </thead>
+        <tbody>
+        @for (int i = 0; i < 1; i++)
+        {
+                 <tr ng-repeat="item in reportData">
+                        <td>{{item.EmployeeID}}</td>
+                        <td>{{item.LastName}}</td>
+                        <td>{{item.FirstName}}</td>
+                        <td>{{item.Salary}}</td>
+                    </tr>
+        }
+        </tbody>
+    </table>
+    <hr>
+    <a href="#" data-ng-click="exportAction('csv')"> Export CSV</a><br /><br />
+    <a href="#" data-ng-click="exportAction('excel')"> Export Excel</a><br /><br />
+    <a href="#" data-ng-click="exportAction('doc')"> Export Doc</a><br /><br />
+    <a href="#" data-ng-click="exportAction('pdf')"> Export Pdf</a><br /><br />
+</body>

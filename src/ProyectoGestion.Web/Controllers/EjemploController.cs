@@ -65,9 +65,12 @@ namespace ProyectoGestion.Web.Controllers
             List<UserAccountPhoto> dataList = new List<UserAccountPhoto>();
             Usuario = _usuarioBusiness.GetUsuario(id);
             UserAccount = _useraccountBusiness.GetUserAccount(id);
-            UserPhoto = _userphotoBusiness.GetUserPhoto(id);
-
-
+            //UserPhoto = _userphotoBusiness.GetUserPhoto(id);
+            data.ID = Usuario.ID;
+            data.Name = Usuario.Name;
+            data.LastName = Usuario.LastName;
+            data.UserName = UserAccount.UserName;
+            data.Password = UserAccount.Password;
             return View(data);
         }    
         public ActionResult Delete(int id)
